@@ -1,0 +1,24 @@
+<div style="margin-top:30px">
+    <div class="row">
+        <div class="sidenav">
+
+            <ul class=" nav nav-pills" style="width:100%">
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size: 20px;padding-right:30px;" (click)="setFilter('all')" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size: 20px;padding-right:30px;">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size: 15px;padding-left:45px;" routerLink="/category" (click)="setFilter('dark')">Dark Chocolate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size: 15px;padding-left:45px;" routerLink="/category" (click)="setFilter('milk')">Milk Chocolate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size: 15px;padding-left:45px;" routerLink="/category" (click)="setFilter('white')">White Chocolate</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

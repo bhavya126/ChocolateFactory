@@ -1,0 +1,14 @@
+.btn{
+    background-color:#4796b3;
+    border-color: #fff;
+    color:white
+}
+.card-body,.card{
+    background-color:#e6f8ff;
+}
+button:hover,a:hover{
+    color: #07526d;
+}
+a{
+    font-weight: bold;
+}

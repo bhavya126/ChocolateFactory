@@ -1,0 +1,21 @@
+.cart-head{
+    padding:10px;
+    font-weight: 500;
+}
+.btn{
+    background-color:#4796b3;
+    border-color: none;
+    color: white;
+}
+.card-body,.card{
+    background-color:#edf9fd;
+}
+button:hover,a:hover,.btn:hover{
+    color: #07526d;
+}
+a,span{
+    font-weight: bold;
+}
+i:hover{
+    cursor: pointer;
+}

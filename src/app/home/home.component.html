@@ -1,0 +1,36 @@
+<div class="py-5">
+    <div class="container">
+        <div class="row hidden-md-up">
+            <div *ngFor="let chocolate of chocolates">
+                <div class="col-md-4" style="padding: 25px;">
+                    <div class="card text-center" style="width: 18rem;height: 22rem;">
+                        <img class="card-img-top"
+                            style="width: 16rem;height: 12rem; align-self: center;padding-top:1rem;"
+                            src={{chocolate.image}} alt="Card image cap">
+                        <div class="card-body">
+                            <p style="height: 60px;">{{chocolate.name}}<br>{{chocolate.price| currency:'INR'}}</p>
+                            <div *ngIf="chocolate.countInCart===0">
+                                <a class="btn btn-outline-dark" (click)="increaseCountInCart(chocolate)">Add to Cart</a>
+                            </div>
+
+                            <div *ngIf="chocolate.countInCart>0" class="panel panel-success">
+                                <div class="panel-body">
+                                    <button class="btn btn-sm shadow-none"
+                                        (click)="decreaseCountInCart(chocolate)"><span class="fa fa-minus"
+                                            aria-hidden="true"></span></button>
+                                    {{chocolate.countInCart}}
+                                    <button class="btn btn-sm shadow-none"
+                                        (click)="increaseCountInCart(chocolate)"><span class="fa fa-plus"
+                                            aria-hidden="true"></span></button>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

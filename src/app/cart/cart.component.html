@@ -1,0 +1,75 @@
+<div class="py-5">
+    <div class="container">
+        <div class="card text-center" *ngIf="chocolatesInCart.length>0">
+            <div class="card-body cart-head">
+                <div class="row">
+                    <div class="col-4">
+                        Item
+                    </div>
+                    <div class="col-2">
+                        Quantity
+                    </div>
+                    <div class="col-2">
+                        Price
+                    </div>
+                    <div class="col-2">
+                        Total
+                    </div>
+                    <div class="col-2">
+                        Remove
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card text-center" *ngFor="let chocolate of chocolatesInCart">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-1">
+                        <img class="card-image" style="width: 5rem;height: 5rem ;" src={{chocolate.image}} alt="Card image cap">
+                    </div>
+                    <div class="col-3">
+                        <p>{{chocolate.name}}</p>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-sm shadow-none" (click)="decreaseCountInCart(chocolate)"><span class="fa fa-minus" aria-hidden="true"></span></button>
+                            {{chocolate.countInCart}}
+                        <button class="btn btn-sm shadow-none" (click)="increaseCountInCart(chocolate)"><span class="fa fa-plus" aria-hidden="true"></span></button>
+                    </div>
+                    <div class="col-2">
+                        <p>{{chocolate.price | currency:'INR'}}</p>
+                    </div>
+                    <div class="col-2">
+                        <p>{{chocolate.price * chocolate.countInCart | currency:'INR'}}</p>
+                    </div>
+                    <div class="col-2">
+                        <i class="fa fa-times" (click)="deleteChocolate(chocolate)" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div *ngIf="chocolatesInCart.length>0">
+          <div class="card text-center">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                    </div>
+                    <div class="col-2" style="font-weight: 500;">
+                        Cart Total:
+                    </div>
+                    <div class="col-2">
+                        {{cartTotal | currency:'INR'}}
+                    </div>
+                </div>
+                
+                </div>
+            </div> 
+            <div class="text-center" style="padding-top: 10px;">
+            <input class="btn"type="submit" value="Proceed to Checkout" routerLink='/checkout'>
+            </div>
+          </div>
+   
+    <div *ngIf="chocolatesInCart.length&lt;1">
+        <h4>Your cart is empty.</h4>
+    </div>
+    </div>
+</div>

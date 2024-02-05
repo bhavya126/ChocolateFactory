@@ -1,0 +1,32 @@
+.topnav{
+    height:50px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background-color: #096484;
+    color: white;
+    }
+i{
+    cursor: pointer;
+    float: right;
+    font-size:30px;
+    padding:8px 27px 4px 0;   
+    border: none;   
+    outline: none;
+
+}
+img{
+    height: 35px;width: 45px;
+    padding-right: 7px;
+}
+h{
+    padding: 6px 0 6px 20px;
+}
+span{
+    float: right;
+    padding:10px;
+    font-size: 20px;
+}

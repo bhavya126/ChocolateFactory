@@ -1,0 +1,169 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-75">
+        <div class="container form-container">
+          <form #myForm="ngForm">
+
+            <div class="row">
+              <div class="col-50 form-group">
+                <h3>Shipping Information</h3>
+                <label for="fname">Name</label>
+                <input required ngModel #firstname="ngModel" type="text" name="firstname" id="fname"
+                  class="form-control">
+                <p class="error-msg" *ngIf="firstname.touched && !firstname.valid">This field is required</p>
+
+                <label for="adr">Address</label>
+                <input required ngModel #address="ngModel" class="form-control" type="text" id="adr" name='address'>
+                <p class="error-msg" *ngIf="address.touched && !address.valid">This field is required</p>
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="phone">Contact No.</label>
+                    <input required pattern="^[0-9]{10}$" maxlength="10" ngModel #phone="ngModel" class="form-control"
+                      type="text" id="phone" name='phoneNo'>
+                    <p class="error-msg" *ngIf="phone.errors?.required && phone.touched">This field is required</p>
+                    <p class="error-msg" *ngIf="phone.errors?.pattern">Enter valid Contact No.</p>
+                  </div>
+                  <div class="col-50">
+                    <label for="city">City</label>
+                    <input required ngModel #city="ngModel" class="form-control" type="text" id="city" name='city'>
+                    <p class="error-msg" *ngIf="city.touched && !city.valid">This field is required</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="state">State</label>
+                    <input required ngModel #state="ngModel" class="form-control" type="text" id="state" name='state'>
+                    <p class="error-msg" *ngIf="state.touched && !state.valid">This field is required</p>
+                  </div>
+                  <div class="col-50">
+                    <label for="zip">Zip</label>
+                    <input required pattern="^[0-9]{6}$" maxlength="6" ngModel #zip="ngModel" class="form-control"
+                      type="text" id="zip" name='zip'>
+                    <p class="error-msg" *ngIf="zip.errors?.required && zip.touched">This field is required</p>
+                    <p class="error-msg" *ngIf="zip.errors?.pattern">Enter valid Zip</p>
+                  </div>
+                </div>
+                <div>
+                </div>
+              </div>
+
+              <div class="col-50">
+                <h3>Billing Information</h3>
+                <label for="bfname">Name</label>
+                <input required ngModel #bfirstname="ngModel" class="form-control" type="text" id="bfname"
+                  name='bfirstname'>
+                <p class="error-msg" *ngIf="bfirstname.touched && !bfirstname.valid">This field is required</p>
+
+                <label for="badr">Address</label>
+                <input required ngModel #badr="ngModel" class="form-control" type="text" id="badr" name='baddress'>
+                <p class="error-msg" *ngIf="badr.touched && !badr.valid">This field is required</p>
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="bphone">Contact No.</label>
+                    <input required pattern="^[0-9]{10}$" maxlength="10" ngModel #bphone="ngModel" class="form-control"
+                      type="text" id="bphone" name='bphoneNo'>
+                    <p class="error-msg" *ngIf="bphone.errors?.required && bphone.touched">This field is required</p>
+                    <p class="error-msg" *ngIf="bphone.errors?.pattern">Enter valid Contact No.</p>
+                  </div>
+
+                  <div class="col-50">
+                    <label for="bcity">City</label>
+                    <input required ngModel #bcity="ngModel" class="form-control" type="text" id="bcity" name='bcity'>
+                    <p class="error-msg" *ngIf="bcity.touched && !bcity.valid">This field is required</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="bstate">State</label>
+                    <input required ngModel #bstate="ngModel" class="form-control" type="text" id="bstate"
+                      name='bstate'>
+                    <p class="error-msg" *ngIf="bstate.touched && !bstate.valid">This field is required</p>
+                  </div>
+                  <div class="col-50">
+                    <label for="bzip">Zip</label>
+                    <input required pattern="^[0-9]{6}$" maxlength="6" ngModel #bzip="ngModel" class="form-control"
+                      type="text" id="bzip" name='bzip'>
+                    <p class="error-msg" *ngIf="bzip.errors?.required && bzip.touched">This field is required</p>
+                    <p class="error-msg" *ngIf="bzip.errors?.pattern">Enter valid Zip</p>
+                  </div>
+                </div>
+
+                <label for="cname">Credit Card Type</label>
+                <select id="cname" name="cardname" class="form-control">
+                  <option value="visa" selected>Visa</option>
+                  <option value="mastercard">Master Card</option>
+                </select>
+
+                <label for="ccnum">Credit card number</label>
+                <input required pattern="^[0-9]{16}$" maxlength="16" ngModel #ccnum="ngModel" class="form-control"
+                  type="text" id="ccnum" name="cardnumber">
+                <p class="error-msg" *ngIf="ccnum.errors?.required && ccnum.touched">This field is required</p>
+                <p class="error-msg" *ngIf="ccnum.errors?.pattern">Enter valid Card Number</p>
+
+                <div class="row">
+                  <div class="col-25">
+                    <label for="expmonth">Exp Month</label>
+                    <input required pattern="^(0[1-9]|1[0-2])$" maxlength="2" ngModel #expmonth="ngModel"
+                      class="form-control" type="text" id="expmonth" name="expmonth" placeholder="MM">
+                    <p class="error-msg" *ngIf="expmonth.touched && expmonth.errors?.required">This field is required
+                    </p>
+                    <p class="error-msg" *ngIf="expmonth.errors?.pattern">Enter valid month</p>
+                  </div>
+                  <div class="col-25">
+                    <label for="expmonth">Exp Year</label>
+                    <input required pattern="^20[2-9][0-9]$" maxlength="4" ngModel #expyear="ngModel"
+                      class="form-control" type="text" id="expyear" name="expyear" placeholder="YYYY">
+                    <p class="error-msg" *ngIf="expyear.touched && expyear.errors?.required">This field is required</p>
+                    <p class="error-msg" *ngIf="expyear.errors?.pattern">Enter valid year</p>
+                  </div>
+                  <div class="col-25">
+                    <label for="cvv">CVV</label>
+                    <input required pattern="^[0-9]{3}$" maxlength="3" ngModel #cvv="ngModel" class="form-control"
+                      type="password" id="cvv" name="cvv">
+                    <p class="error-msg" *ngIf="cvv.errors?.required && cvv.touched">This field is required</p>
+                    <p class="error-msg" *ngIf="cvv.errors?.pattern">Enter valid Security Code</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <input type="submit" [disabled]="!myForm.form.valid" value="Checkout Now" data-toggle="modal" class="btn"
+              data-target="#myModal">
+          </form>
+        </div>
+
+      </div>
+      <div class="col-25">
+        <div class="container cart-container">
+          <h4>Cart</h4>
+          <div *ngFor="let chocolate of chocolates">
+            <p *ngIf="chocolate.countInCart>0">{{chocolate.name}}<span
+                class="price">{{chocolate.price * chocolate.countInCart | currency:'INR'}}</span></p>
+          </div>
+          <hr>
+          <p>Total <span class="price" style="color:black"><b>{{cartTotal | currency:'INR'}}</b></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Success!</h4>
+            <i class="fa fa-times close" data-dismiss="modal" (click)="goHome()" aria-hidden="true"></i>
+
+          </div>
+          <div class="modal-body">
+            <p>Your order has been place.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
